@@ -1,0 +1,1 @@
+This Android app generates a Magic Number Square based on the user's birthdate. The app calculates the sum of all digits in the birthdate and dynamically creates a 3x3 magic square where each row, column, and diagonal adds up to the calculated sum. It features a clean UI with a custom top bar, user input validation, and a dynamically generated table layout.
