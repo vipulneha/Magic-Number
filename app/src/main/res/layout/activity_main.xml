@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:background="@drawable/gradient_background"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <!-- Left Side Icon -->
+        <ImageView
+            android:id="@+id/left_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/icon_home"
+            android:tint="#fefefe" />
+
+        <!-- Title in Center -->
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/prototype"
+            android:gravity="center"
+            android:text="Magic Number"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" /> <!-- Replace with your custom font -->
+
+        <!-- Right Side Menu Icon -->
+        <ImageView
+            android:id="@+id/menu_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/icon_menu"
+            android:tint="#FEFEFE" />
+    </LinearLayout>
+
+    <!-- Banner Ads Section (Hidden by Default) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:visibility="gone">
+        <!-- Add banner ads here / And remove visibility gone -->
+    </LinearLayout>
+
+    <!-- Main Content Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:gravity="center">
+
+        <!-- Gradient Card for Content -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/gradient_card_background"
+            android:elevation="12dp"
+            android:padding="16dp"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Birthdate Input -->
+                <EditText
+                    android:id="@+id/editTextBirthdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:fontFamily="@font/prototype"
+                    android:hint="Enter Birthdate (DD/MM/YYYY)"
+                    android:inputType="date"
+                    android:padding="12dp"
+                    android:textColor="#333333"
+                    android:textColorHint="#757575"
+                    android:textSize="16sp" /> <!-- Replace with your custom font -->
+
+                <!-- Generate Button -->
+                <Button
+                    android:id="@+id/buttonGenerate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_button"
+                    android:fontFamily="@font/prototype"
+                    android:padding="12dp"
+                    android:text="Generate Magic Table"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" /> <!-- Replace with your custom font -->
+
+                <!-- Total Sum Display -->
+                <TextView
+                    android:id="@+id/textViewTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/primary"
+                    android:fontFamily="@font/dig3"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    android:textStyle="bold" /> <!-- Replace with your custom font -->
+
+                <!-- Table Layout for Magic Square -->
+                <TableLayout
+                    android:id="@+id/tableLayoutMagicSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:stretchColumns="*" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</LinearLayout>
